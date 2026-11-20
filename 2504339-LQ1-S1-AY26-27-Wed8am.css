@@ -1,0 +1,295 @@
+/*
+Q4-Q5: CIT2011 Lab Quiz #1 - CSS Styling
+Fullname: Kortisha Edwards
+ID#: 2504339
+Day/Time of Lab: Wednesday/8AM
+Assignment: CIT2011 Lab Quiz #1
+Assignment Date/Time: November 20, 2026/8AM
+*/
+
+/* Q4: Updated colour scheme */
+:root {
+    --ink: #202938;
+    --muted: #667085;
+    --brand: #2457a7;
+    --brand-dark: #173d78;
+    --background: #f3f6fb;
+    --white: #ffffff;
+    --border: #d7deea;
+    --success: #16803c;
+    --error: #c62828;
+}
+
+/* Q4: General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 16px;
+    background: var(--background);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* Q4: Main content container */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Q4: Page heading */
+.page-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    color: var(--brand-dark);
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--muted);
+    margin-top: 0;
+}
+
+/* Q4: Content panels */
+.panel {
+    background: var(--white);
+    padding: 26px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(20, 40, 70, 0.07);
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: var(--brand-dark);
+}
+
+/* Q4-Q5: Responsive form grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Q4: Form field styling */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field label {
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font: inherit;
+    background: var(--white);
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid rgba(36, 87, 167, 0.2);
+    border-color: var(--brand);
+}
+
+/* Q5: Visual styling for valid input fields */
+input.valid {
+    border: 2px solid var(--success);
+}
+
+/* Q5: Visual styling for invalid input fields */
+input.invalid {
+    border: 2px solid var(--error);
+}
+
+/* Q5: Validation message styling */
+.message {
+    min-height: 18px;
+    font-size: 0.85rem;
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.message.error {
+    color: var(--error);
+}
+
+/* Q4: Registration type controls */
+.option-group {
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.option-group legend {
+    font-weight: 700;
+    padding: 0 6px;
+}
+
+.option-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-right: 20px;
+}
+
+.option-group input {
+    width: auto;
+}
+
+/* Q4: Inspection checkbox */
+.checkbox-label {
+    margin-bottom: 22px;
+}
+
+.checkbox-label label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.checkbox-label input {
+    width: auto;
+}
+
+/* Q7-Q10: Fee summary styling */
+.fee-box {
+    background: #f0f5fc;
+    border: 1px solid #d6e2f3;
+    border-radius: 9px;
+    padding: 18px;
+    margin: 20px 0;
+}
+
+.fee-box h3 {
+    margin-top: 0;
+    color: var(--brand-dark);
+}
+
+.fee-box p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.fee-box .total {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Q4: Button styling */
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 12px 20px;
+    background: var(--brand);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--brand-dark);
+}
+
+.secondary-button {
+    background: #64748b;
+}
+
+.danger-button {
+    background: var(--error);
+}
+
+/* Q13: Form feedback message */
+.form-message {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Q15: Saved records heading */
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Q15: Individual saved registration card */
+.record-card {
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--brand);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 15px;
+    background: var(--white);
+}
+
+.record-card h3 {
+    margin-top: 0;
+    color: var(--brand-dark);
+}
+
+.record-card p {
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+}
+
+/* Q5: Responsive layout for smaller screens */
+@media (max-width: 650px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .option-group label {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .fee-box p {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
